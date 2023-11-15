@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json())
 
 app.post('/api/messages', async (req, res) => {
-    await pusher.trigger("grafica", "venta", {
+    await pusher.trigger("chat", "message", {
         username: req.body.username,
         message: req.body.message
     });
